@@ -20,6 +20,12 @@ public class UsuarioService implements IService<Usuario, Integer> {
     }
 
     @Override
+    public Usuario login(String email, String senha) {
+        return usuarioJpa.findByEmailAndSenha(email, senha).orElse(null);
+    }
+
+
+    @Override
     public Usuario buscarPorId(Integer id) {
         return usuarioJpa.findById(id).orElse(null);
     }

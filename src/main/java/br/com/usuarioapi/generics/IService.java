@@ -6,6 +6,8 @@ public interface IService<T,N> {
 
     public T criar(T entity);
 
+    public T login(String email, String senha);
+
     public T buscarPorId(N id);
 
     public List<T> buscarTodos();
