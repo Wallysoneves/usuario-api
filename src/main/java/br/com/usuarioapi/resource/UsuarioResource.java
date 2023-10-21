@@ -21,7 +21,7 @@ public class UsuarioResource {
         return new ResponseEntity<>(usuarioService.criar(entity), HttpStatus.OK);
     }
 
-    @GetMapping
+    @GetMapping("/login")
     public ResponseEntity<Usuario> login(@RequestParam("email") String email, @RequestParam("senha") String senha) {
 
         return new ResponseEntity<>(usuarioService.login(email, senha), HttpStatus.OK);
