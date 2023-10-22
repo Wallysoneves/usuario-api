@@ -43,7 +43,7 @@ public class UsuarioResource {
     }
 
     @DeleteMapping("/{id}")
-    public void deleteById(@PathVariable("id") Integer id) {
+    public void deleteById(@RequestParam("id") Integer id) {
         usuarioService.deleteById(id);
     }
 
