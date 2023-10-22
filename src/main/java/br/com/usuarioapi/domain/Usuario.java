@@ -1,5 +1,6 @@
 package br.com.usuarioapi.domain;
 
+import com.fasterxml.jackson.annotation.JsonInclude;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -11,6 +12,7 @@ import lombok.*;
 
 @Entity
 @Table(name = "USUARIO")
+@JsonInclude(JsonInclude.Include.NON_EMPTY)
 public class Usuario {
 
     @Id
