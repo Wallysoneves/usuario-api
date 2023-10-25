@@ -27,4 +27,7 @@ public class Usuario {
 
     @Column(name = "SENHA", nullable = false)
     private String senha;
+
+
+
 }
