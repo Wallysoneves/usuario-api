@@ -1,5 +1,6 @@
 package br.com.usuarioapi.service;
 
+import br.com.usuarioapi.exception.UsuarioException;
 import br.com.usuarioapi.domain.Usuario;
 import br.com.usuarioapi.generics.IService;
 import br.com.usuarioapi.repository.UsuarioJpa;
@@ -20,8 +21,8 @@ public class UsuarioService implements IService<Usuario, Integer> {
     }
 
     @Override
-    public Usuario login(String email, String senha) throws Exception {
-        return usuarioJpa.findByEmailAndSenha(email, senha).orElseThrow(()-> new Exception("Usuario não cadastrado, favor faça seu cadastro!"));
+    public Usuario login(String email, String senha) throws UsuarioException {
+        return usuarioJpa.findByEmailAndSenha(email, senha).orElseThrow(()-> new UsuarioException("Usuario não cadastrado, favor faça seu cadastro!"));
     }
 
 

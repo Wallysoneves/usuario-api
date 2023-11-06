@@ -1,5 +1,6 @@
 package br.com.usuarioapi.resource;
 
+import br.com.usuarioapi.exception.UsuarioException;
 import br.com.usuarioapi.domain.Usuario;
 import br.com.usuarioapi.service.UsuarioService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,7 +23,7 @@ public class UsuarioResource {
     }
 
     @GetMapping("/login")
-    public ResponseEntity<Usuario> login(@RequestParam("email") String email, @RequestParam("senha") String senha) throws Exception {
+    public ResponseEntity<Usuario> login(@RequestParam("email") String email, @RequestParam("senha") String senha) throws UsuarioException {
 
         return new ResponseEntity<>(usuarioService.login(email, senha), HttpStatus.OK);
     }
