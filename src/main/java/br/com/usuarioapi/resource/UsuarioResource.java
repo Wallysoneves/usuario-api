@@ -16,7 +16,7 @@ public class UsuarioResource {
     @Autowired
     private UsuarioService usuarioService;
 
-    @PostMapping
+    @PostMapping("cadastrar")
     public ResponseEntity<Usuario> criar(@RequestBody Usuario entity) {
         return new ResponseEntity<>(usuarioService.criar(entity), HttpStatus.OK);
     }
@@ -37,17 +37,17 @@ public class UsuarioResource {
         return new ResponseEntity<>(usuarioService.buscarPorId(id), HttpStatus.OK);
     }
 
-    @PutMapping
+    @PutMapping("alterar-usuario")
     public ResponseEntity<Usuario> alterar(@RequestBody Usuario entity) throws Exception {
         return new ResponseEntity<>(usuarioService.alterar(entity), HttpStatus.OK);
     }
 
-    @DeleteMapping("/{id}")
+    @DeleteMapping("/deletar-por-id")
     public void deleteById(@RequestParam("id") Integer id) {
         usuarioService.deleteById(id);
     }
 
-    @DeleteMapping
+    @DeleteMapping("deletar")
     public void delete(@RequestBody Usuario entity) {
         usuarioService.delete(entity);
     }
