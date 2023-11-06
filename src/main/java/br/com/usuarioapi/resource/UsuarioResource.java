@@ -27,7 +27,7 @@ public class UsuarioResource {
         return new ResponseEntity<>(usuarioService.login(email, senha), HttpStatus.OK);
     }
 
-    @GetMapping(name = "/todos")
+    @GetMapping(name = "/todos-usuarios")
     public ResponseEntity<List<Usuario>> all() {
         return new ResponseEntity<>(usuarioService.buscarTodos(), HttpStatus.OK);
     }
