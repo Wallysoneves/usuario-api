@@ -20,8 +20,8 @@ public class UsuarioService implements IService<Usuario, Integer> {
     }
 
     @Override
-    public Usuario login(String email, String senha) {
-        return usuarioJpa.findByEmailAndSenha(email, senha).orElse(new Usuario());
+    public Usuario login(String email, String senha) throws Exception {
+        return usuarioJpa.findByEmailAndSenha(email, senha).orElseThrow(()-> new Exception("Usuario não cadastrado, favor faça seu cadastro!"));
     }
 
 

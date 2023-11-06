@@ -6,7 +6,7 @@ public interface IService<T,N> {
 
     public T criar(T entity);
 
-    public T login(String email, String senha);
+    public T login(String email, String senha) throws Exception;
 
     public T buscarPorId(N id);
 

@@ -22,7 +22,7 @@ public class UsuarioResource {
     }
 
     @GetMapping("/login")
-    public ResponseEntity<Usuario> login(@RequestParam("email") String email, @RequestParam("senha") String senha) {
+    public ResponseEntity<Usuario> login(@RequestParam("email") String email, @RequestParam("senha") String senha) throws Exception {
 
         return new ResponseEntity<>(usuarioService.login(email, senha), HttpStatus.OK);
     }
